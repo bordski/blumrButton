@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5755165D1AF85AA2000FDBB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5755165C1AF85AA2000FDBB0 /* main.m */; };
+		575516601AF85AA2000FDBB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5755165F1AF85AA2000FDBB0 /* AppDelegate.m */; };
+		575516631AF85AA2000FDBB0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575516621AF85AA2000FDBB0 /* ViewController.m */; };
+		575516661AF85AA2000FDBB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575516641AF85AA2000FDBB0 /* Main.storyboard */; };
+		575516681AF85AA2000FDBB0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 575516671AF85AA2000FDBB0 /* Images.xcassets */; };
+		5755166B1AF85AA2000FDBB0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 575516691AF85AA2000FDBB0 /* LaunchScreen.xib */; };
+		575516771AF85AA2000FDBB0 /* blumrButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 575516761AF85AA2000FDBB0 /* blumrButtonTests.m */; };
+		575516821AF85D82000FDBB0 /* MenuOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 575516811AF85D82000FDBB0 /* MenuOption.m */; };
+		575516841AF86601000FDBB0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 575516831AF86601000FDBB0 /* CoreGraphics.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		575516711AF85AA2000FDBB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5755164F1AF85AA2000FDBB0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 575516561AF85AA2000FDBB0;
+			remoteInfo = blumrButton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		575516571AF85AA2000FDBB0 /* blumrButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blumrButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5755165B1AF85AA2000FDBB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5755165C1AF85AA2000FDBB0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5755165E1AF85AA2000FDBB0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5755165F1AF85AA2000FDBB0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		575516611AF85AA2000FDBB0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		575516621AF85AA2000FDBB0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		575516651AF85AA2000FDBB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		575516671AF85AA2000FDBB0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5755166A1AF85AA2000FDBB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		575516701AF85AA2000FDBB0 /* blumrButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blumrButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		575516751AF85AA2000FDBB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		575516761AF85AA2000FDBB0 /* blumrButtonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = blumrButtonTests.m; sourceTree = "<group>"; };
+		575516801AF85D82000FDBB0 /* MenuOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuOption.h; sourceTree = "<group>"; };
+		575516811AF85D82000FDBB0 /* MenuOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuOption.m; sourceTree = "<group>"; };
+		575516831AF86601000FDBB0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		575516541AF85AA2000FDBB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				575516841AF86601000FDBB0 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5755166D1AF85AA2000FDBB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5755164E1AF85AA2000FDBB0 = {
+			isa = PBXGroup;
+			children = (
+				575516831AF86601000FDBB0 /* CoreGraphics.framework */,
+				575516591AF85AA2000FDBB0 /* blumrButton */,
+				575516731AF85AA2000FDBB0 /* blumrButtonTests */,
+				575516581AF85AA2000FDBB0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		575516581AF85AA2000FDBB0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				575516571AF85AA2000FDBB0 /* blumrButton.app */,
+				575516701AF85AA2000FDBB0 /* blumrButtonTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		575516591AF85AA2000FDBB0 /* blumrButton */ = {
+			isa = PBXGroup;
+			children = (
+				5755165E1AF85AA2000FDBB0 /* AppDelegate.h */,
+				5755165F1AF85AA2000FDBB0 /* AppDelegate.m */,
+				575516611AF85AA2000FDBB0 /* ViewController.h */,
+				575516621AF85AA2000FDBB0 /* ViewController.m */,
+				575516641AF85AA2000FDBB0 /* Main.storyboard */,
+				575516671AF85AA2000FDBB0 /* Images.xcassets */,
+				575516691AF85AA2000FDBB0 /* LaunchScreen.xib */,
+				5755165A1AF85AA2000FDBB0 /* Supporting Files */,
+				575516801AF85D82000FDBB0 /* MenuOption.h */,
+				575516811AF85D82000FDBB0 /* MenuOption.m */,
+			);
+			path = blumrButton;
+			sourceTree = "<group>";
+		};
+		5755165A1AF85AA2000FDBB0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5755165B1AF85AA2000FDBB0 /* Info.plist */,
+				5755165C1AF85AA2000FDBB0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		575516731AF85AA2000FDBB0 /* blumrButtonTests */ = {
+			isa = PBXGroup;
+			children = (
+				575516761AF85AA2000FDBB0 /* blumrButtonTests.m */,
+				575516741AF85AA2000FDBB0 /* Supporting Files */,
+			);
+			path = blumrButtonTests;
+			sourceTree = "<group>";
+		};
+		575516741AF85AA2000FDBB0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				575516751AF85AA2000FDBB0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		575516561AF85AA2000FDBB0 /* blumrButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5755167A1AF85AA2000FDBB0 /* Build configuration list for PBXNativeTarget "blumrButton" */;
+			buildPhases = (
+				575516531AF85AA2000FDBB0 /* Sources */,
+				575516541AF85AA2000FDBB0 /* Frameworks */,
+				575516551AF85AA2000FDBB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = blumrButton;
+			productName = blumrButton;
+			productReference = 575516571AF85AA2000FDBB0 /* blumrButton.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5755166F1AF85AA2000FDBB0 /* blumrButtonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5755167D1AF85AA2000FDBB0 /* Build configuration list for PBXNativeTarget "blumrButtonTests" */;
+			buildPhases = (
+				5755166C1AF85AA2000FDBB0 /* Sources */,
+				5755166D1AF85AA2000FDBB0 /* Frameworks */,
+				5755166E1AF85AA2000FDBB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				575516721AF85AA2000FDBB0 /* PBXTargetDependency */,
+			);
+			name = blumrButtonTests;
+			productName = blumrButtonTests;
+			productReference = 575516701AF85AA2000FDBB0 /* blumrButtonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5755164F1AF85AA2000FDBB0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				TargetAttributes = {
+					575516561AF85AA2000FDBB0 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					5755166F1AF85AA2000FDBB0 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 575516561AF85AA2000FDBB0;
+					};
+				};
+			};
+			buildConfigurationList = 575516521AF85AA2000FDBB0 /* Build configuration list for PBXProject "blumrButton" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5755164E1AF85AA2000FDBB0;
+			productRefGroup = 575516581AF85AA2000FDBB0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				575516561AF85AA2000FDBB0 /* blumrButton */,
+				5755166F1AF85AA2000FDBB0 /* blumrButtonTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		575516551AF85AA2000FDBB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				575516661AF85AA2000FDBB0 /* Main.storyboard in Resources */,
+				5755166B1AF85AA2000FDBB0 /* LaunchScreen.xib in Resources */,
+				575516681AF85AA2000FDBB0 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5755166E1AF85AA2000FDBB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		575516531AF85AA2000FDBB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				575516631AF85AA2000FDBB0 /* ViewController.m in Sources */,
+				575516821AF85D82000FDBB0 /* MenuOption.m in Sources */,
+				575516601AF85AA2000FDBB0 /* AppDelegate.m in Sources */,
+				5755165D1AF85AA2000FDBB0 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5755166C1AF85AA2000FDBB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				575516771AF85AA2000FDBB0 /* blumrButtonTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		575516721AF85AA2000FDBB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 575516561AF85AA2000FDBB0 /* blumrButton */;
+			targetProxy = 575516711AF85AA2000FDBB0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		575516641AF85AA2000FDBB0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				575516651AF85AA2000FDBB0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		575516691AF85AA2000FDBB0 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5755166A1AF85AA2000FDBB0 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		575516781AF85AA2000FDBB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		575516791AF85AA2000FDBB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5755167B1AF85AA2000FDBB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = blumrButton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5755167C1AF85AA2000FDBB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = blumrButton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5755167E1AF85AA2000FDBB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = blumrButtonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/blumrButton.app/blumrButton";
+			};
+			name = Debug;
+		};
+		5755167F1AF85AA2000FDBB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = blumrButtonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/blumrButton.app/blumrButton";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		575516521AF85AA2000FDBB0 /* Build configuration list for PBXProject "blumrButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				575516781AF85AA2000FDBB0 /* Debug */,
+				575516791AF85AA2000FDBB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5755167A1AF85AA2000FDBB0 /* Build configuration list for PBXNativeTarget "blumrButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5755167B1AF85AA2000FDBB0 /* Debug */,
+				5755167C1AF85AA2000FDBB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5755167D1AF85AA2000FDBB0 /* Build configuration list for PBXNativeTarget "blumrButtonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5755167E1AF85AA2000FDBB0 /* Debug */,
+				5755167F1AF85AA2000FDBB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5755164F1AF85AA2000FDBB0 /* Project object */;
+}
