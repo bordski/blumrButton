@@ -75,7 +75,12 @@ typedef NS_ENUM(NSInteger, menuButtonPosition) {
             
             for (NSInteger counter = 0; counter < 2; counter ++) {
                 UIView *view = [[UIView alloc] initWithFrame:CGRectMake((width * counter) + 5, 5, width - 10, height - 10)];
-                view.backgroundColor = [UIColor lightGrayColor];
+                if (counter == 0) {
+                    view.backgroundColor = [UIColor lightGrayColor];
+                } else {
+                    view.backgroundColor = [UIColor cyanColor];
+                }
+                
                 [_viewContainer addSubview:view];
             }
         }
@@ -114,12 +119,12 @@ typedef NS_ENUM(NSInteger, menuButtonPosition) {
 
 - (NSArray *)contactsMenuChoices {
     if (_contactsMenuChoices == nil) {
-        _contactsMenuChoices = @[@"contacts", @"invites", @"conversations"];
+        _contactsMenuChoices = @[@"contacts", @"invites", @"chat"];
     }
     return _contactsMenuChoices;
 }
 
-- (NSArray *)messagesMenuChoics {
+- (NSArray *)messagesMenuChoices {
     if (_messagesMenuChoices == nil) {
         _messagesMenuChoices = @[@"Trending" /*, @"Blumit", @"Boohit", @"Newest", @"Post a Topic", @"My Bookmarks"*/ , @"Posts", @"Comments"];
     }
@@ -212,7 +217,20 @@ typedef NS_ENUM(NSInteger, menuButtonPosition) {
 
 - (void)didPressButton:(id)button {
     if (button == self.menuButton) {
-        [self openMenuForViewType:menuViewTypeContacts];
+//        [self openMenuForViewType:menuViewTypeContacts];
+        if (self.viewContainer.contentOffset.x == 0) {
+            [self openMenuForViewType:menuViewTypeMessages];
+        } else {
+            [self openMenuForViewType:menuViewTypeContacts];
+        }
+    } else if ([button isKindOfClass:[MenuOption class]]) {
+        //TODO: decide on what todo here coz this scrolling is hardcoded
+        [self closeMenu];
+        if (self.viewContainer.contentOffset.x == 0) {
+            [self moveViewContainerToViewType:menuViewTypeMessages];
+        } else {
+            [self moveViewContainerToViewType:menuViewTypeContacts];
+        }
     }
 }
 
@@ -221,10 +239,10 @@ typedef NS_ENUM(NSInteger, menuButtonPosition) {
 - (void)moveViewContainerToViewType:(menuViewType)viewType {
     CGFloat containerWidth = CGRectGetWidth(self.viewContainer.frame);
     
-    if (viewType == menuViewTypeContacts) {
-        [self.viewContainer setContentOffset:CGPointMake(containerWidth, 0)];
-    } else if (viewType == menuViewTypeMessages) {
-        [self.viewContainer setContentOffset:CGPointMake(0, 0)];
+    if (viewType == menuViewTypeMessages) {
+        [self.viewContainer setContentOffset:CGPointMake(containerWidth, 0) animated:TRUE];
+    } else if (viewType == menuViewTypeContacts) {
+        [self.viewContainer setContentOffset:CGPointMake(0, 0) animated:TRUE];
     } else {
         //Unknown view type
     }
@@ -254,47 +272,155 @@ typedef NS_ENUM(NSInteger, menuButtonPosition) {
             //choices cannot be empty
             return;
         }
-        
-        CGFloat menuButtonX = CGRectGetMinX(self.menuButton.frame);
+
+        CGFloat menuButtonHeight = CGRectGetHeight(self.menuButton.frame);
         
         CGFloat menuX = CGRectGetMinX(self.menuButton.frame) - 100;
         CGFloat menuY = CGRectGetMinY(self.menuButton.frame) - 100;
         CGFloat menuHeight = CGRectGetWidth(self.menuButton.frame) + 200;
         CGFloat menuWidth = CGRectGetHeight(self.menuButton.frame) + 200;
         
-        CGFloat optionHeight = 50;
-        CGFloat optionWidth = 50;
+        CGFloat optionHeight = 45;
+        CGFloat optionWidth = 45;
         __block CGFloat optionX = 0;
-        __block CGFloat optionY = 25;
+        __block CGFloat optionY = 0;
+
+        menuButtonPosition buttonPosition = [self getMenuButtonPositionForView:self.menuButton];
         
-        if (menuButtonX == 0) {
-            //left side
-            optionX = (menuWidth / 2) - CGRectGetWidth(self.menuButton.frame) / 3;
-        } else {
-            //rigth side
-            optionX = 0;
-        }
-        
-        [choices enumerateObjectsUsingBlock:^(NSString *menuOption, NSUInteger idx, BOOL *stop) {
-            MenuOption *optionButton = [MenuOption buttonWithType:UIButtonTypeCustom];
-            optionButton.menuOption = menuOption;
+        if (buttonPosition == upperleft) {
             
-            optionButton.frame = CGRectMake(optionX, optionY, optionWidth, optionHeight);
-            optionButton.backgroundColor = [UIColor purpleColor];
-            optionY += optionHeight + 5;
-//            optionButton.layer.cornerRadius = CGRectGetWidth(optionButton.frame) / 2;
-            [self.menuView addSubview:optionButton];
+            optionY = (menuHeight / 2) - (menuButtonHeight / 2);
+            optionX = menuWidth - (optionWidth + optionWidth / 2);
             
-            if (menuButtonX == 0) {
-       
-            } else {
+            [choices enumerateObjectsUsingBlock:^(NSString *menuOption, NSUInteger idx, BOOL *stop) {
+                MenuOption *optionButton = [self createMenuOptionForOption:menuOption withFrame:CGRectMake(optionX, optionY, optionWidth, optionHeight)];
+                optionY += optionHeight + 2;
+                optionX -= optionWidth / (choices.count - (idx+1));
                 
+                [self.menuView addSubview:optionButton];
+                
+               
+            }];
+            
+        } else if (buttonPosition == middleleft) {
+            
+            optionY = menuHeight / 2 - (menuButtonHeight / 2);
+            optionX = menuWidth - (optionWidth + optionWidth / 2);
+            
+            NSInteger middleIndex = (choices.count - 1) / 2;
+            
+            //upper insert
+            for (NSInteger counter = middleIndex; counter >= 0; counter--) {
+                NSString *menuOption = choices[counter];
+                
+                MenuOption *optionButton = [self createMenuOptionForOption:menuOption withFrame:CGRectMake(optionX, optionY, optionWidth, optionHeight)];
+                
+                optionY -= optionHeight + 2;
+                optionX -= optionWidth / (counter+1);
+                
+                [self.menuView addSubview:optionButton];
             }
-        }];
-        
-        [UIView animateWithDuration:0.2 delay:0 options:(UIViewAnimationOptionAllowUserInteraction) animations:^{
+            
+            optionY = menuHeight / 2 + (menuButtonHeight / 2);
+            optionX = menuWidth - (optionWidth + optionWidth / 2);
+            optionX -= optionWidth / 2;
+            
+            //lower insert
+            for (NSInteger counter = middleIndex+1; counter <= choices.count -1; counter++) {
+                NSString *menuOption = choices[counter];
+                MenuOption *optionButton = [self createMenuOptionForOption:menuOption withFrame:CGRectMake(optionX, optionY, optionWidth, optionHeight)];
+                
+                optionY -= optionHeight + 2;
+                optionX -= optionWidth / counter;
+                
+                [self.menuView addSubview:optionButton];
+            }
+            
+        } else if (buttonPosition == lowerleft) {
+            
+            optionY = (menuHeight / 2) - (menuButtonHeight / 2);
+            optionX = menuWidth - (optionWidth + optionWidth / 2);
+            
+            [choices enumerateObjectsUsingBlock:^(NSString *menuOption, NSUInteger idx, BOOL *stop) {
+                MenuOption *optionButton = [self createMenuOptionForOption:menuOption withFrame:CGRectMake(optionX, optionY, optionWidth, optionHeight)];
+                optionY -= optionHeight + 2;
+                optionX -= optionWidth / (choices.count - (idx+1));
+                
+                [self.menuView addSubview:optionButton];
+                
+                
+            }];
+            
+        } else if (buttonPosition == upperright) {
+            
+            optionY = (menuHeight / 2) - (menuButtonHeight / 2);
+            optionX = optionWidth / 2;
+            
+            [choices enumerateObjectsUsingBlock:^(NSString *menuOption, NSUInteger idx, BOOL *stop) {
+                MenuOption *optionButton = [self createMenuOptionForOption:menuOption withFrame:CGRectMake(optionX, optionY, optionWidth, optionHeight)];
+                optionY += optionHeight + 2;
+                optionX += optionWidth / (choices.count - (idx+1));
+                
+                [self.menuView addSubview:optionButton];
+                
+                
+            }];
+            
+        } else if (buttonPosition == middleright) {
+            
+            optionY = menuHeight / 2 - (menuButtonHeight / 2);
+            optionX = optionWidth / 2;
+            
+            NSInteger middleIndex = (choices.count - 1) / 2;
+            
+            //upper insert
+            for (NSInteger counter = middleIndex; counter >= 0; counter--) {
+                NSString *menuOption = choices[counter];
+                
+                MenuOption *optionButton = [self createMenuOptionForOption:menuOption withFrame:CGRectMake(optionX, optionY, optionWidth, optionHeight)];
+                
+                optionY -= optionHeight + 2;
+                optionX += optionWidth / (counter+1);
+                
+                [self.menuView addSubview:optionButton];
+            }
+            
+            optionY = menuHeight / 2 + (menuButtonHeight / 2);
+            optionX = optionWidth / 2;
+            optionX += optionWidth / 2;
+            
+            //lower insert
+            for (NSInteger counter = middleIndex+1; counter <= choices.count -1; counter++) {
+                NSString *menuOption = choices[counter];
+                MenuOption *optionButton = [self createMenuOptionForOption:menuOption withFrame:CGRectMake(optionX, optionY, optionWidth, optionHeight)];
+                
+                optionY -= optionHeight + 2;
+                optionX += optionWidth / counter;
+                
+                [self.menuView addSubview:optionButton];
+            }
+            
+        } else if (buttonPosition == lowerright) {
+            optionY = (menuHeight / 2) - (menuButtonHeight / 2);
+            optionX = optionWidth / 2;
+            
+            [choices enumerateObjectsUsingBlock:^(NSString *menuOption, NSUInteger idx, BOOL *stop) {
+                MenuOption *optionButton = [self createMenuOptionForOption:menuOption withFrame:CGRectMake(optionX, optionY, optionWidth, optionHeight)];
+                optionY -= optionHeight + 2;
+                optionX += optionWidth / (choices.count - (idx+1));
+                
+                [self.menuView addSubview:optionButton];
+                
+                
+            }];
+        } else {
+            //unknown position
+        }
+
+        [UIView animateWithDuration:0.2 delay:0 options:(UIViewAnimationOptionLayoutSubviews) animations:^{
             self.menuView.frame = CGRectMake(menuX, menuY, menuWidth, menuHeight);
             self.menuView.layer.cornerRadius = menuHeight / 2;
+            
         } completion:^(BOOL finished) {
             
         }];
@@ -303,6 +429,18 @@ typedef NS_ENUM(NSInteger, menuButtonPosition) {
         [self.view insertSubview:self.menuViewBackground belowSubview:self.menuButton];
         [self.view insertSubview:self.menuView atIndex:self.view.subviews.count - 1];
     }
+}
+
+- (MenuOption *)createMenuOptionForOption:(NSString *)option withFrame:(CGRect)frame {
+    MenuOption *optionButton = [MenuOption buttonWithType:UIButtonTypeCustom];
+    optionButton.menuOption = option;
+    
+    optionButton.frame = frame;
+    optionButton.backgroundColor = [UIColor purpleColor];
+    
+    [optionButton addTarget:self action:@selector(didPressButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    return optionButton;
 }
 
 - (void)closeMenu {
